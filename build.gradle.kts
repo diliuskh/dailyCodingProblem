@@ -13,7 +13,7 @@ repositories {
 
 val kotlinVersion = "1.5.0"
 val junitVersion = "5.8.0-M1"
-val mockitoVersion = "3.9.0"
+val mockitoVersion = "3.10.0"
 val mockitoKotlinVersion = "3.2.0"
 
 dependencies {
@@ -24,6 +24,7 @@ dependencies {
     testImplementation("org.junit.jupiter", "junit-jupiter")
     testImplementation("org.junit.jupiter", "junit-jupiter-params")
     testImplementation("org.jetbrains.kotlin", "kotlin-test-junit5", kotlinVersion)
+    testImplementation("org.jetbrains.kotlin", "kotlin-test", kotlinVersion)
     testImplementation("org.mockito", "mockito-core", mockitoVersion)
     testImplementation("org.mockito", "mockito-junit-jupiter", mockitoVersion)
     testImplementation("org.mockito.kotlin", "mockito-kotlin", mockitoKotlinVersion)
