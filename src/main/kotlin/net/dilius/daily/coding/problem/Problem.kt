@@ -1,5 +1,5 @@
 package net.dilius.daily.coding.problem
 
-interface Problem {
-    fun solve()
+interface Problem<I, R> {
+    fun solve(input: I): R
 }

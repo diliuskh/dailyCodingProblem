@@ -1,5 +1,5 @@
 plugins {
-    val kotlinVersion = "1.5.10"
+    val kotlinVersion = "1.7.20"
     java
     kotlin("jvm") version kotlinVersion
 }
@@ -11,11 +11,11 @@ repositories {
     mavenCentral()
 }
 
-val kotlinVersion = "1.5.10"
+val kotlinVersion = "1.7.20"
 val coroutinesVersion = "1.5.0"
-val junitVersion = "5.8.0-M1"
-val mockitoVersion = "3.11.0"
-val mockitoKotlinVersion = "3.2.0"
+val junitVersion = "5.9.1"
+val mockitoVersion = "4.8.0"
+val mockitoKotlinVersion = "4.0.0"
 
 dependencies {
     implementation(kotlin("reflect"))
@@ -37,20 +37,20 @@ tasks.test {
 }
 
 configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_15
-    targetCompatibility = JavaVersion.VERSION_15
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 tasks {
     compileKotlin {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "15"
+            jvmTarget = "17"
         }
     }
     compileTestKotlin {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "15"
+            jvmTarget = "17"
         }
     }
 }
