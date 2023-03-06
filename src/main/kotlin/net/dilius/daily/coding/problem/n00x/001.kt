@@ -23,3 +23,16 @@ class AddsUpToNum : Problem<Input, Boolean> {
         return false
     }
 }
+
+class AddsUpToNumFast : Problem<Input, Boolean> {
+    override fun solve(input: Input): Boolean {
+        val checked = mutableSetOf<Int>()
+        val (nums, k) = input
+        for (i in nums.indices) {
+            if (nums[i] > k) continue
+            if (checked.contains(k - nums[i])) return true
+            checked.add(nums[i])
+        }
+        return false
+    }
+}
