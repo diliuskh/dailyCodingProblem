@@ -13,6 +13,8 @@ repositories {
 
 val kotlinVersion = "1.8.0"
 val coroutinesVersion = "1.6.4"
+val arrowVersion = "1.0.1"
+
 val junitVersion = "5.9.2"
 val mockitoVersion = "5.1.0"
 val mockitoKotlinVersion = "4.1.0"
@@ -23,6 +25,8 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx", "kotlinx-coroutines-core", coroutinesVersion)
     implementation("org.jetbrains.kotlinx", "kotlinx-coroutines-jdk8", coroutinesVersion)
+
+    implementation("io.arrow-kt", "arrow-core", arrowVersion)
 
     testImplementation(platform("org.junit:junit-bom:$junitVersion"))
     testImplementation("org.junit.jupiter", "junit-jupiter")
@@ -38,7 +42,7 @@ tasks.test {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(17))
+        languageVersion.set(JavaLanguageVersion.of(19))
     }
 }
 tasks {
