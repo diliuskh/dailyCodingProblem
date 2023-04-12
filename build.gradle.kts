@@ -1,5 +1,5 @@
 plugins {
-    val kotlinVersion = "1.8.0"
+    val kotlinVersion = "1.8.20"
     java
     kotlin("jvm") version kotlinVersion
 }
@@ -11,7 +11,7 @@ repositories {
     mavenCentral()
 }
 
-val kotlinVersion = "1.8.0"
+val kotlinVersion = "1.8.20"
 val coroutinesVersion = "1.6.4"
 val arrowVersion = "1.0.1"
 
