@@ -1,6 +1,5 @@
 package net.dilius.daily.coding.problem.n00x
 
-import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.params.ParameterizedTest
@@ -21,6 +20,10 @@ class StringDecoderTest {
         @JvmStatic
         fun codeStringSource(): Stream<Arguments> {
             return Stream.of(
+                Arguments.of("0", 0),
+                Arguments.of("01", 0),
+                Arguments.of("013", 0),
+                Arguments.of("602", 0),
                 Arguments.of("1", 1),
                 Arguments.of("12", 2),
                 Arguments.of("122", 3),
