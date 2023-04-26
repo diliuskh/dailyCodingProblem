@@ -36,3 +36,35 @@ class StringDecoder : Problem<String, Int> {
     }
 
 }
+
+class DynamicStringDecoder : Problem<String, Int> {
+
+    override fun solve(input: String): Int {
+        val cache = mutableMapOf<String, Int>()
+        return solve0(input, cache)
+    }
+
+    fun solve0(input: String, cache: MutableMap<String, Int>): Int {
+        if (input.isEmpty()) {
+            return 1
+        }
+        if (input.startsWith('0')) {
+            return 0
+        }
+        if (cache[input] != null) {
+            return cache[input]!!
+        }
+
+        val one = solve0(input.substring(1), cache)
+
+        val two =
+            if (input.length < 2 || input.substring(0, 2).toInt() > 26) 0
+            else solve0(input.substring(2), cache)
+
+        val result = one + two
+        cache.putIfAbsent(input, result)
+        return result
+
+    }
+
+}
