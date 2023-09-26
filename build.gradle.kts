@@ -1,5 +1,5 @@
 plugins {
-    val kotlinVersion = "1.8.21"
+    val kotlinVersion = "1.9.0"
     java
     kotlin("jvm") version kotlinVersion
 }
@@ -11,7 +11,7 @@ repositories {
     mavenCentral()
 }
 
-val kotlinVersion = "1.8.21"
+val kotlinVersion = "1.9.0"
 val coroutinesVersion = "1.6.4"
 val arrowVersion = "1.0.1"
 
@@ -42,20 +42,20 @@ tasks.test {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(19))
+        languageVersion.set(JavaLanguageVersion.of(20))
     }
 }
 tasks {
     compileKotlin {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "19"
+            jvmTarget = "20"
         }
     }
     compileTestKotlin {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "19"
+            jvmTarget = "20"
         }
     }
 }
